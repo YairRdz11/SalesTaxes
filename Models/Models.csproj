@@ -54,6 +54,7 @@
     <Compile Include="ShoppingBasket.cs" />
     <Compile Include="ShoppingBasketProduct.cs" />
     <Compile Include="TaxesCalculatorVisitors.cs" />
+    <Compile Include="Warehouse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
