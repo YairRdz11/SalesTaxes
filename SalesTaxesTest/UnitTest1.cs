@@ -164,5 +164,15 @@ namespace SalesTaxesTest
                 "Sales Taxes: 7.30/n" +
                 "Total: 86.53/n", shoppingBasket.GetReceipt());
         }
+
+        [Test]
+        public void ttp_addBasicProductToWarehouse()
+        {
+            var warehouse = new Warehouse();
+            var basic = new Basic(1, "Music CD", 14.99);
+
+            warehouse.AddProduct(basic);
+            Assert.AreEqual(1, warehouse.ProductList.Count);
+        }
     }
 }
