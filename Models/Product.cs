@@ -43,5 +43,10 @@ namespace Models
             return Id == obj.Id && string.Equals(Name, obj.Name, StringComparison.CurrentCultureIgnoreCase) &&
                    Cost == obj.Cost && Taxes == obj.Taxes && Total == obj.Total;
         }
+
+        public override string ToString()
+        {
+            return $"{Name} at {Cost}";
+        }
     }
 }
