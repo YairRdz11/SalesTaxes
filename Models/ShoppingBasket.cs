@@ -43,6 +43,8 @@ namespace Models
 
             var cad = ShoppingBasketProductList.Aggregate(row,
                 (current, shoppingBasketProduct) => current + shoppingBasketProduct.GetRow());
+            cad += $"Sales Taxes: {GetSalesTaxes():0.00}/n";
+            cad += $"Total: {GetTotal():0.00}/n";
             return cad;
         }
 
@@ -50,10 +52,17 @@ namespace Models
         {
             foreach (var producti in ProductList)
             {
+                if(producti.Checked) continue;
                 producti.Check();
-                var count = ProductList.Where(productj => !productj.Checked)
-                    .Count(productj => producti.Equals(productj));
-                ShoppingBasketProductList.Add(new ShoppingBasketProduct(count + 1, producti));
+                var count = 1;
+                foreach (var productj in ProductList)
+                {
+                    if (productj.Checked) continue;
+                    if (!producti.Equals(productj)) continue;
+                    count++;
+                    productj.Check();
+                }
+                ShoppingBasketProductList.Add(new ShoppingBasketProduct(count, producti));
             }
         }
     }

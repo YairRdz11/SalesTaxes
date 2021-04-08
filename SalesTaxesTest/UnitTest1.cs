@@ -146,7 +146,7 @@ namespace SalesTaxesTest
 
             var importedBasic = new ImportedBasic(1, "Imported bottle of perfume", 27.99);
             var basic = new Basic(2, "Bottle of perfume", 18.99);
-            var exempt = new Exempt(3, "Packet of headache", 9.75);
+            var exempt = new Exempt(3, "Packet of headache pills", 9.75);
             var importedExcept = new ImportedExcent(4, "Imported box of chocolates", 11.25);
             var importedExcept2 = new ImportedExcent(4, "Imported box of chocolates", 11.25);
 
@@ -157,10 +157,10 @@ namespace SalesTaxesTest
             shoppingBasket.Add(importedExcept2);
 
             Assert.AreEqual(
-                "Imported bottle of perfume: 32.19/n " +
+                "Imported bottle of perfume: 32.19/n" +
                 "Bottle of perfume: 20.89/n" +
                 "Packet of headache pills: 9.75/n" +
-                "Imported box of chocolates: 23.70(2 @ 11.85) /n" +
+                "Imported box of chocolates: 23.70 (2 @ 11.85)/n" +
                 "Sales Taxes: 7.30/n" +
                 "Total: 86.53/n", shoppingBasket.GetReceipt());
         }

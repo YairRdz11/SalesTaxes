@@ -14,8 +14,8 @@
         public string GetRow()
         {
             return Quantity > 1
-                ? $"{Product.Name}: {Product.Total * Quantity} ({Quantity} @ {Product.Total})/n" 
-                : $"{Product.Name}: {Product.Total}/n";
+                ? $"{Product.Name}: {Product.Total * Quantity:0.00} ({Quantity} @ {Product.Total:0.00})/n" 
+                : $"{Product.Name}: {Product.Total:0.00}/n";
         }
     }
 }
