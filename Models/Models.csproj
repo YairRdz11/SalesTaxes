@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basic.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Exempt.cs" />
     <Compile Include="ImportedBasic.cs" />
     <Compile Include="ImportedExcent.cs" />

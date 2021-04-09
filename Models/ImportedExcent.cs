@@ -9,7 +9,7 @@ namespace Models
     public class ImportedExcent : Product
     {
         private const double ImportedTaxes = 0.05;
-        public ImportedExcent(long id, string name, double cost) : base(id, name, cost)
+        public ImportedExcent(string name, double cost) : base(name, cost)
         {
             SetTaxes(CalculateTax(cost));
             SetTotal();

@@ -15,20 +15,22 @@ namespace Models
 
         public void AddProduct(Product product)
         {
-            if(ProductList.Any(x=> x.Equals(product))) return;
+            if (ProductList.Any(x => x.Equals(product)))
+            {
+                Console.Error.WriteLine($"{product.Name} already exists");
+                return;
+            }
             ProductList.Add(product);
         }
 
-        public string PrintList()
+        public void PrintList()
         {
-            var cad = string.Empty;
+            var count = 1;
             foreach (var product in ProductList)
             {
-                cad += product.ToString();
-                Console.WriteLine(product.ToString());
+                Console.WriteLine($"{count} - {product}");
+                count++;
             }
-
-            return cad;
         }
     }
 }

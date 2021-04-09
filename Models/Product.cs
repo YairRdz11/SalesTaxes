@@ -9,16 +9,14 @@ namespace Models
     public abstract class Product
     {
         protected const int precisionDigits = 2;
-        public long Id { get; }
         public string Name { get; }
         public double Cost { get; }
         public double Taxes { get; private set; }
         public double Total { get; private set; }
         public bool Checked { get; private set; }
 
-        protected Product(long id, string name, double cost)
+        protected Product(string name, double cost)
         {
-            Id = id;
             Name = name.Trim();
             Cost = cost;
             Checked = false;
@@ -40,7 +38,7 @@ namespace Models
 
         public bool Equals(Product obj)
         {
-            return Id == obj.Id && string.Equals(Name, obj.Name, StringComparison.CurrentCultureIgnoreCase) &&
+            return string.Equals(Name, obj.Name, StringComparison.CurrentCultureIgnoreCase) &&
                    Cost == obj.Cost && Taxes == obj.Taxes && Total == obj.Total;
         }
 

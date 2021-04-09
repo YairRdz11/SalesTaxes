@@ -2,7 +2,7 @@
 {
     public class Exempt : Product
     {
-        public Exempt(long id, string name, double cost) : base(id, name, cost)
+        public Exempt(string name, double cost) : base(name, cost)
         {
             SetTaxes(0);
             SetTotal();

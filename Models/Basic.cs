@@ -5,7 +5,7 @@ namespace Models
     public class Basic : Product
     {
         private const double BasicTaxes = 0.1;
-        public Basic(long id, string name, double cost) : base(id, name, cost)
+        public Basic(string name, double cost) : base( name, cost)
         {
             SetTaxes(CalculateTax(cost));
             SetTotal();

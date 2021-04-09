@@ -6,7 +6,7 @@ namespace Models
     {
         private const double ImportedTaxes = 0.05;
         private const double BasicTaxes = 0.1;
-        public ImportedBasic(long id, string name, double cost) : base(id, name, cost)
+        public ImportedBasic(string name, double cost) : base( name, cost)
         {
             SetTaxes(CalculateTax(cost));
             SetTotal();
